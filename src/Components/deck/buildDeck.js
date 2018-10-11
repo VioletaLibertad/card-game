@@ -15,6 +15,6 @@ export default () => {
     };
     cards.push(card);
     cards.push({...card});
-  }
+  };
   return shuffle(cards);
 };
