@@ -7,7 +7,19 @@ class Board extends Component {
     return(
       <div className="board">
         {
-          this.props.deck.map(card => <Cards icon={card.icon} />)
+          this.props.deck
+            .map((card, index) => {
+              console.log(card);
+
+              const cardsCompared = this.props.cardsBeingCompared.indexOf(card) > -1;
+              return <Cards
+                key = {index} 
+                icon={card.icon}
+                cardsCompared = {cardsCompared}
+                selectCard = {() => this.props.selectCard(card)}
+                wasGuessed = {card.wasGuessed}
+              />
+            })
         }
       </div>
     )
