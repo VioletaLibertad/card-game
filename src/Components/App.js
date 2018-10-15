@@ -12,7 +12,7 @@ class App extends Component {
       cardsBeingCompared: [],
       isBeingCompared: false  
     };
-    console.log('asdf' + this.props.deck);
+    console.log(this.state.deck);
   }
   render() {
     return (
@@ -51,7 +51,7 @@ class App extends Component {
     this.setState({isBeingCompared: true});
     setTimeout(() => {
       const [firstCard, secondCard] = cardsBeingCompared;
-      let deck = this.props.deck;
+      let deck = this.state.deck;
       
 
       if (firstCard.icon === secondCard.icon) {
