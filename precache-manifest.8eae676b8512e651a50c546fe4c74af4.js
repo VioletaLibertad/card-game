@@ -28,19 +28,19 @@ self.__precacheManifest = [
     "url": "/card-game/static/media/fontawesome-webfont.fee66e71.woff"
   },
   {
-    "revision": "b06871f281fee6b241d60582ae9369b9",
-    "url": "/card-game/static/media/fontawesome-webfont.b06871f2.ttf"
-  },
-  {
     "revision": "674f50d287a8c48dc19ba404d20fe713",
     "url": "/card-game/static/media/fontawesome-webfont.674f50d2.eot"
+  },
+  {
+    "revision": "b06871f281fee6b241d60582ae9369b9",
+    "url": "/card-game/static/media/fontawesome-webfont.b06871f2.ttf"
   },
   {
     "revision": "e854c20f2b451f320f79",
     "url": "/card-game/static/css/1.33bfdef0.chunk.css"
   },
   {
-    "revision": "ab7d0e4c84547047f3af14c5b9c32d05",
+    "revision": "9255433ad0657d7613d9ab5e4620a788",
     "url": "/card-game/index.html"
   }
 ];
