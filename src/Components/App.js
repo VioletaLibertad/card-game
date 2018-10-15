@@ -4,20 +4,28 @@ import Board from './Board/Board';
 import buildDeck from './deck/buildDeck';
 import './App.css';
 
+const getInitialState = () => {
+  const deck = buildDeck();
+  return {
+    deck, 
+    cardsBeingCompared: [],
+    isBeingCompared: false, 
+    livesAmount: 0
+  };
+};
+
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      deck: buildDeck(),
-      cardsBeingCompared: [],
-      isBeingCompared: false  
-    };
-    console.log(this.state.deck);
+    this.state = getInitialState();
   }
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header
+          livesAmount = {this.state.livesAmount}
+          restartGame = {() => this.restartGame()}
+        />
         <Board 
           deck = {this.state.deck}
           cardsBeingCompared = {this.state.cardsBeingCompared}
@@ -63,13 +71,28 @@ class App extends Component {
         });
       }
       
+      this.checkWinner(deck);
       this.setState({
         deck,
         cardsBeingCompared: [],
-        isBeingCompared: false
+        isBeingCompared: false, 
+        livesAmount: this.state.livesAmount + 1
       })
-    }, 1000)
-    
+    }, 1000)    
+  };
+
+  checkWinner(deck) {
+    if (
+      deck.filter((card) => !card.wasGuessed).length === 0
+    ) {
+      alert(`Ganaste en ${this.state.livesAmount} intentos`);
+    }
+  };
+
+  restartGame() {
+    this.setState(
+      getInitialState()
+    )
   };
 
 }
